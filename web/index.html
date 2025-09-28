@@ -2,27 +2,48 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>🎰 Рулетка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎰 Рулетка призов</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <h1>🎰 Колесо фортуны</h1>
+  <div class="container">
+    <div class="header">
+      <h1>🎰 Колесо фортуны</h1>
+      <p>Крути и выигрывай призы!</p>
+    </div>
 
-  <div class="wheel-container">
-    <div class="pointer"></div>
-    <div class="wheel" id="wheel">
-      <div class="sector">🎁 Стикер</div>
-      <div class="sector">💎 10 монет</div>
-      <div class="sector">🔥 VIP</div>
-      <div class="sector">🍀 Ничего</div>
-      <div class="sector">🎉 +1 спин</div>
-      <div class="sector">⭐ Сюрприз</div>
+    <div class="wheel-container">
+      <div class="pointer"></div>
+      <div class="wheel" id="wheel">
+        <div class="sector" style="--i:1; --clr:#ff6b6b;">🎁 Стикер</div>
+        <div class="sector" style="--i:2; --clr:#4ecdc4;">💎 10 монет</div>
+        <div class="sector" style="--i:3; --clr:#45b7d1;">🔥 VIP</div>
+        <div class="sector" style="--i:4; --clr:#96ceb4;">🍀 Удача</div>
+        <div class="sector" style="--i:5; --clr:#feca57;">🎉 +1 спин</div>
+        <div class="sector" style="--i:6; --clr:#ff9ff3;">⭐ Сюрприз</div>
+      </div>
+      <div class="wheel-center"></div>
+    </div>
+
+    <div class="controls">
+      <button class="spin-btn" id="spinBtn" onclick="spin()">
+        <span class="btn-text">🎯 Крутить!</span>
+        <div class="btn-shine"></div>
+      </button>
+    </div>
+
+    <div class="result-container">
+      <div class="result" id="result">Жми "Крутить!" чтобы начать</div>
+      <div class="confetti" id="confetti"></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">🎯 Спинов сегодня: <span id="spinsToday">0</span></div>
+      <div class="stat-item">🏆 Призов выиграно: <span id="prizesWon">0</span></div>
     </div>
   </div>
-
-  <button onclick="spin()">Крутить!</button>
-  <div class="result" id="result"></div>
 
   <script src="script.js"></script>
 </body>
