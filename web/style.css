@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at center, #111, #000);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+.wheel-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(0deg);
+  transition: transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+.sector {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.sector:nth-child(1) { transform: rotate(0deg) skewY(-30deg); background: #ff0055; }
+.sector:nth-child(2) { transform: rotate(60deg) skewY(-30deg); background: #ff6600; }
+.sector:nth-child(3) { transform: rotate(120deg) skewY(-30deg); background: #33cc33; }
+.sector:nth-child(4) { transform: rotate(180deg) skewY(-30deg); background: #3399ff; }
+.sector:nth-child(5) { transform: rotate(240deg) skewY(-30deg); background: #9933ff; }
+.sector:nth-child(6) { transform: rotate(300deg) skewY(-30deg); background: #ffcc00; }
+
+.pointer {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid #ffcc00;
+  filter: drop-shadow(0 0 5px #ffcc00);
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff0055, #ff6600);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6600, #ff0055);
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffcc00;
+}

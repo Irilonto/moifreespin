@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>🎰 Рулетка</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>🎰 Колесо фортуны</h1>
+
+  <div class="wheel-container">
+    <div class="pointer"></div>
+    <div class="wheel" id="wheel">
+      <div class="sector">🎁 Стикер</div>
+      <div class="sector">💎 10 монет</div>
+      <div class="sector">🔥 VIP</div>
+      <div class="sector">🍀 Ничего</div>
+      <div class="sector">🎉 +1 спин</div>
+      <div class="sector">⭐ Сюрприз</div>
+    </div>
+  </div>
+
+  <button onclick="spin()">Крутить!</button>
+  <div class="result" id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
